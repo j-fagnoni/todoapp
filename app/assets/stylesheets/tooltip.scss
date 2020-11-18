@@ -1,0 +1,19 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.tooltip-text {
+  display: none;
+  width: max-content;
+  max-width: 100%;
+  background-color: rgb(15, 15, 15);
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  padding: 5px 8px;
+  z-index: 2;
+  pointer-events: none;
+}

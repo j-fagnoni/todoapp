@@ -1,0 +1,17 @@
+<div class="form-container">
+
+  <%= form_for(@task) do |f| %>
+
+      <%= f.label :title, class: "medium-text" %>
+      <%= f.text_field :title, class: "input-field" %>
+      <%= f.label :details, class: "medium-text" %>
+      <%= f.text_field :details, class: "input-field" %>
+      <%= f.label :completed, class: "medium-text mb" %>
+      <%= f.check_box :completed, class: "checked" %>
+      <div class="button-container-animation btn-form">
+        <%= f.submit "Create task", class: "submit" %> 
+      </div>
+
+  <% end %>
+
+</div>

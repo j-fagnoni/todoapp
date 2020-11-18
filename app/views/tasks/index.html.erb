@@ -1,0 +1,39 @@
+<div class="navbar">
+  <h1 class="big-text">My tasks</h1>
+  <div class="button-container-animation btn-navbar">
+    <%= link_to "Add task", new_task_path, class: "button" %>
+  </div>
+</div>
+<div class="container">
+  <% unless @tasks.first.nil? %>
+    <div class="tasks-container">
+      <% @tasks.all.each do |task| %>
+        <div class="task">
+          <% condition = "checked" if task.completed %>
+          <input class="checked" type="checkbox" name="completed" onclick="return false;" <%= condition %>>
+          
+
+          <div class="tooltip">
+            <h2 class="link hover medium-text task-title unselectable">
+              <%= task.title.capitalize %>
+              <% unless task.details == "" %>
+                <span class="tooltip-text"><%= task.details %></span>
+              <% end %>
+            </h2>
+          </div>
+          <div class="icons">
+            <%= link_to "tasks/#{task.id}", class: "link hover medium-text icon", method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+            <%= link_to "tasks/#{task.id}/edit", class: "link hover medium-text icon" do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  
+  <% end %>
+
+</div>
+
